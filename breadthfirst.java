@@ -46,16 +46,21 @@ var doBFS = function(graph, source) {
     //  Hint:
     //  use graph to get the neighbors,
     //  use bfsInfo for distances and predecessors 
-    while (!queue.isEmpty()){
+    
+    while (!queue.isEmpty()) {
         var u = queue.dequeue();
+        // println("Vertex u: " + u);
         
-        for (var v ;;){
-            var = graph[][];
+        for (var i = 0; i < graph[u].length; i++) {
+            var v = graph[u][i];
+            // print("graph[u]: "+graph[u]);
+            // println("vertex v: " + v);
             
-            if (!bfsInfo[v].distance === 0){
-                bfsInfo[v].distance = u.distance + 1;
+            if (bfsInfo[v].distance === null) {
+                bfsInfo[v].distance = bfsInfo[u].distance + 1;
                 bfsInfo[v].predecessor = u;
                 queue.enqueue(v);
+                // println("enqueued vertex: " + v);
             }
         }
     }
@@ -79,7 +84,7 @@ for (var i = 0; i < adjList.length; i++) {
     println("vertex " + i + ": distance = " + bfsInfo[i].distance + ", predecessor = " + bfsInfo[i].predecessor);
 }
 
-/*
+
 Program.assertEqual(bfsInfo[0], {distance: 4, predecessor: 1});
 Program.assertEqual(bfsInfo[1], {distance: 3, predecessor: 4});
 Program.assertEqual(bfsInfo[2], {distance: 1, predecessor: 3});
@@ -88,4 +93,4 @@ Program.assertEqual(bfsInfo[4], {distance: 2, predecessor: 2});
 Program.assertEqual(bfsInfo[5], {distance: 2, predecessor: 2});
 Program.assertEqual(bfsInfo[6], {distance: 1, predecessor: 3});
 Program.assertEqual(bfsInfo[7], {distance: null, predecessor: null});
-*/
+
