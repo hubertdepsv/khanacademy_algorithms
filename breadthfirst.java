@@ -47,15 +47,15 @@ var doBFS = function(graph, source) {
     //  use graph to get the neighbors,
     //  use bfsInfo for distances and predecessors 
     while (!queue.isEmpty()){
-        var last = queue.dequeue();
+        var u = queue.dequeue();
         
-        for (;;){
+        for (var v ;;){
             var = graph[][];
             
-            if (!bfsInfo[]. ===){
-                ;
-                ;
-                ;
+            if (!bfsInfo[v].distance === 0){
+                bfsInfo[v].distance = u.distance + 1;
+                bfsInfo[v].predecessor = u;
+                queue.enqueue(v);
             }
         }
     }
