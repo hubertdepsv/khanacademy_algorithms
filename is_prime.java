@@ -19,3 +19,26 @@ var isPrime = function(number){
 
 
 println(isPrime(425));
+
+
+//Better version (from Khan Academy)
+
+var isPrimeA = function(inputNum){
+     Asteps = Asteps+2;
+     // assume inputNum is prime
+     var primeCheck = true;
+    // loop until test <= square root of inputNum
+    var upperBound = floor(sqrt(inputNum));
+
+    for(var test = 2; test <= upperBound; test++){
+        Asteps = Asteps+3;
+    // check if test divides inputNum
+        if (inputNum % test === 0){
+        // found a factor!
+        primeCheck = false;
+        }
+    
+    } // end of loop
+    // return TRUE or FALSE
+    return primeCheck;
+ };
