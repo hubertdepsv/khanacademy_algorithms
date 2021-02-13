@@ -47,4 +47,4 @@ for (var h = 0; h <= upperBound; h++){
     }
 }
 
-Copyright Kan Academy
+Copyright Khan Academy
